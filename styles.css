@@ -1,4 +1,5 @@
 /* General styles */
+
 body {
     text-align: center;
     background-color: #011F3F;
@@ -19,11 +20,13 @@ body {
 }
 
 /* Span is inserted via JS upon game over */
+
 span {
     color: #FEF2BF;
 }
 
 /* Wrapper for all buttons */
+
 .container {
     display: block;
     margin: auto;
@@ -31,6 +34,7 @@ span {
 }
 
 /* Button styles */
+
 .btn {
     border-radius: 20%;
     border: 10px solid #000;
@@ -41,11 +45,13 @@ span {
 }
 
 /* Class applied via JS when game is lost - flashing bg colour */
+
 .game-over {
     opacity: 0.8;
 }
 
 /* Button colours */
+
 .red,
 .game-over {
     background-color: #FF0000;
@@ -64,6 +70,7 @@ span {
 }
 
 /* Class applied with JS when clicked */
+
 .pressed {
     background-color: #808080;
     box-shadow: 0 0 20px #FFF;
