@@ -24,8 +24,10 @@ $(document).keypress(function () {
 
         // Change the title to display first level on game start
         $("#level-title").text(`Level: ${level}`);
+        
         // Call the function that flashes random button colours for user to click
         nextSequence();
+        
         // Game has now begun
         gameStarted = true;
     }
@@ -37,11 +39,13 @@ $(".btn").click(function () {
 
     // Grab the id of the button that the user clicked and store it...
     let userChosenColour = $(this).attr("id");
+    
     // ...then put that button's corresponding id into empty array
     userClickedPattern.push(userChosenColour);
 
     // Call function to check last user clicks against decided pattern
     checkAnswer(userClickedPattern.length - 1);
+    
     // Call functions to play sounds and highlight buttons when clicked
     playSound(userChosenColour);
     animateClick(userChosenColour);
@@ -62,13 +66,16 @@ function nextSequence() {
 
     // Store a random number between 1-4 (or 0-3!)
     let randomNumber = Math.floor(Math.random() * 4);
+    
     // Use random number to select a random colour from array
     let randomChosenColor = buttonColours[randomNumber];
+    
     // Push the randomly chosen colour into an array, ready to be matched up by user
     gamePattern.push(randomChosenColor);
 
     // Concatenate id of button and its colour to run flashing animation
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
+    
     // Play sound of button when button flashes at random
     playSound(randomChosenColor);
 
@@ -136,6 +143,7 @@ function gameOver() {
 
     // Show 'game over' message to user
     $("#level-title").text("Game Over😭 Press any Key to Restart");
+    
     // Show highest level reached by the user (append span for different colour)
     $("#hi-score").text(`You reached `).append(`<span>level ${level}</span>`);
 
